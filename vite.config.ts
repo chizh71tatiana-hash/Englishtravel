@@ -5,15 +5,17 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
   resolve: {
     alias: {
-      // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  // 👇 Добавь эти настройки для GitHub Pages
+  base: '/Englishtravel/', // Правильный путь для репозитория Englishtravel
+  build: {
+    outDir: 'dist', // Папка сборки по умолчанию
   },
 })
